@@ -1,25 +1,25 @@
 // **********************reference type*************************
 
 // primitive type : 불리언, 숫자, null, undifined, 문자열
-// primitive type이 아닌 경우에는 프로그래밍 언어로 정의되지 않고 reference type이 됨
+// primitive type이 아닌 경우에는 프로그래밍 언어로 정의되지 않고 reference type이 된다
 var obj1 = { value : 10 };
 var obj2 = obj1;  
 // 이 경우 obj1이 primitive type이 아니기 때문에
-// obj2는 프로그래밍 언어로 정의되지 않고 단지 참조만 함
+// obj2는 프로그래밍 언어로 정의되지 않고 단지 참조만 합니다
 var obj3 = { value : 10 };
 
 obj1 === obj2 // true
 
 obj1 === obj3 // false
 
-// 참조할 경우 참조 관계에 있는 것중에 하나가 바뀌면 참조하는 모든 변수가(obj2) 바뀜
+// 참조할 경우 참조 관계에 있는 것중에 하나가 바뀌면 참조하는 모든 변수가(obj2) 따라 바뀐다
 obj1.value = 15
 
 console.log(obj2.value) // 15
 console.log(obj3.value) // 10
 
 
-// 반대로 변수를 primitive type으로 정의하면 참조를 안함
+// 반대로 변수를 primitive type으로 정의하면 참조를 하지 않음
 var a = "Ahoy!"
 var b = a
 var c = "Ahoy!"
@@ -36,7 +36,7 @@ let obj = {a: 'a', b: 'b', c: 'c'}
 let clone = Object.assign({}, obj);
 // 혹은 더 간단하게
 let clone2 = {...obj}
-// 이러면 obj를 변경해도 obj2는 영향을 받지 않음.
+// 이러면 obj를 변경해도 obj2는 영향을 받지 않는다.
 
 
 // object 안의 object는..?
@@ -45,8 +45,8 @@ let obj2 = {...obj}
 
 obj.c.deep = 'hahahahaha'
 
-console.log(obj, obj2) // 복사했음에도 불구하고 둘 다 c 안의 obj가 같아짐
-// 첫번째 layer만 복사하고 안에있는 obj는 다른 메모리에 저장되어서 참조를 하게 됨
+console.log(obj, obj2) // 복사했음에도 불구하고 둘 다 c 안의 obj가 같아진다
+// 첫번째 layer만 복사하고 안에있는 obj는 다른 메모리에 저장되어서 참조를 하기 때문이다
 
 
 // 안에 있는 object까지 복사하고싶으면
